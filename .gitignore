@@ -22,7 +22,7 @@ node_modules
 release/app/dist
 release/build
 .erb/dll
-.yarn/cache
+.yarn
 
 .idea
 npm-debug.log.*
