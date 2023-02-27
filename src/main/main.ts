@@ -25,6 +25,8 @@ const mb = menubar({
       nodeIntegration: true,
       contextIsolation: false,
     },
+    width: 1200, // Set the width of the popup
+    height: 800, // Set the height of the popup
   },
 });
 
@@ -60,7 +62,9 @@ if (process.env.NODE_ENV === 'production') {
 const isDebug =
   process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true';
 
-if (isDebug) {
+const closeDebug = false;
+
+if (closeDebug) {
   require('electron-debug')();
 }
 

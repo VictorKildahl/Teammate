@@ -32,7 +32,7 @@ const configuration: webpack.Configuration = {
 
   entry: {
     // renderer: Object.keys(dependencies || {}),
-    renderer: path.join(__dirname, '..', 'app', 'renderer', 'index.tsx'),
+    renderer: path.join(__dirname, '../../', 'src', 'renderer', 'index.tsx'),
   },
 
   output: {
