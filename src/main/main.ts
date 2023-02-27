@@ -64,7 +64,7 @@ const isDebug =
 
 const closeDebug = false;
 
-if (closeDebug) {
+if (isDebug) {
   require('electron-debug')();
 }
 
