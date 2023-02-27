@@ -28,6 +28,7 @@ const mb = menubar({
     width: 1200, // Set the width of the popup
     height: 800, // Set the height of the popup
   },
+  icon: '/assets/icons/t.png',
 });
 
 mb.on('ready', () => {
@@ -98,7 +99,7 @@ const createWindow = async () => {
     show: false,
     width: 1024,
     height: 728,
-    icon: getAssetPath('icon.png'),
+    icon: '/assets/icons/t.png', // getAssetPath('icon.png'),
     webPreferences: {
       preload: app.isPackaged
         ? path.join(__dirname, 'preload.js')
