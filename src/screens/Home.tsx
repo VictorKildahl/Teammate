@@ -29,6 +29,7 @@ export default function Home() {
       {data.map((item) => (
         <Notification type="lunch" text={item[0]} time={item[1]} />
       ))}
+      <Notification type="cake" text="There is Drømmekage" kitchen="4.1.1" />
     </div>
   );
 }
