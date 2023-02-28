@@ -5,15 +5,15 @@ import { useState } from 'react';
 
 export default function Lunch() {
   const [name, setName] = useState('');
-  const [time, setTime] = useState('');
+  const [whenWhere, setWhenWhere] = useState('');
 
   async function handleSubmit(event) {
     event.preventDefault();
 
-    await addDoc(collection(firestore, 'lunch'), {
-      name,
-      time,
+    await addDoc(collection(firestore, 'notifications'), {
       type: 'lunch',
+      name,
+      whenWhere,
       timestamp: serverTimestamp(),
     });
   }
@@ -35,13 +35,13 @@ export default function Lunch() {
           <div className="w-56 pt-2 font-mono text-2xl">Time:</div>
           <input
             type="text"
-            value={time}
+            value={whenWhere}
             className="w-56 mt-2 font-mono text-2xl bg-transparent border-b focus:border-green-400 focus:outline-none hover:border-green-400"
-            onChange={(event) => setTime(event.target.value)}
+            onChange={(event) => setWhenWhere(event.target.value)}
           />
         </div>
         <div className="flex justify-center w-full pt-10">
-          <Notification type="lunch" text={name} time={time} />
+          <Notification type="lunch" text={name} time={whenWhere} />
         </div>
         <button
           type="submit"

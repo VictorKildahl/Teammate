@@ -4,16 +4,16 @@ import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { useState } from 'react';
 
 export default function Cake() {
-  const [kitchen, setKitchen] = useState('');
-  const [typeOfCake, setTypeOfCake] = useState('');
+  const [name, setName] = useState('');
+  const [whenWhere, setWhenWhere] = useState('');
 
   async function handleSubmit(event) {
     event.preventDefault();
 
-    await addDoc(collection(firestore, 'cake'), {
-      kitchen,
-      typeOfCake,
+    await addDoc(collection(firestore, 'notifications'), {
       type: 'cake',
+      name,
+      whenWhere,
       timestamp: serverTimestamp(),
     });
   }
@@ -26,22 +26,22 @@ export default function Cake() {
           <div className="w-56 pt-2 font-mono text-2xl">Type of cake:</div>
           <input
             type="text"
-            value={typeOfCake}
+            value={name}
             className="w-56 mt-2 font-mono text-2xl bg-transparent border-b focus:outline-none focus:border-green-400 hover:border-green-400"
-            onChange={(event) => setTypeOfCake(event.target.value)}
+            onChange={(event) => setName(event.target.value)}
           />
         </div>
         <div className="flex flex-row ">
           <div className="w-56 pt-2 font-mono text-2xl">Kitchen:</div>
           <input
             type="text"
-            value={kitchen}
+            value={whenWhere}
             className="w-56 mt-2 font-mono text-2xl bg-transparent border-b focus:border-green-400 focus:outline-none hover:border-green-400"
-            onChange={(event) => setKitchen(event.target.value)}
+            onChange={(event) => setWhenWhere(event.target.value)}
           />
         </div>
         <div className="flex justify-center w-full pt-10">
-          <Notification type="cake" text={typeOfCake} kitchen={kitchen} />
+          <Notification type="cake" text={name} kitchen={whenWhere} />
         </div>
         <button
           type="submit"

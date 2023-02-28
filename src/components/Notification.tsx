@@ -3,17 +3,15 @@ import cutlery from '../../assets/icons/cutlery.svg';
 import donut from '../../assets/icons/donut.svg';
 
 type NotificationProps = {
-  text: string;
   type: 'cake' | 'lunch';
-  time?: string;
-  kitchen?: string;
+  name: string;
+  whenWhere: string;
 };
 
 export default function Notification({
-  text,
   type,
-  time,
-  kitchen,
+  name,
+  whenWhere,
 }: NotificationProps) {
   return (
     <div className="h-20 mt-4 bg-blue-100 rounded-lg w-96">
@@ -25,13 +23,16 @@ export default function Notification({
         />
         <div className="pl-5">
           {type === 'lunch' ? (
-            <div className="">{text} is going to lunch</div>
+            <div className="">{name} is going to lunch</div>
           ) : (
-            <div className="">There is {text}</div>
+            <div className="">There is {name}</div>
           )}
 
-          {time && <div className="">When: {time}</div>}
-          {kitchen && <div className="">Where: {kitchen}</div>}
+          {type === 'lunch' ? (
+            <div className="">When: {whenWhere}</div>
+          ) : (
+            <div className="">Where: {whenWhere}</div>
+          )}
         </div>
       </div>
     </div>
