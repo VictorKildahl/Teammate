@@ -1,6 +1,5 @@
-import React from 'react';
 import bigT from '../../assets/icons/bigT.png';
-import JYSK_logo from '../../assets/icons/JYSK_logo.png';
+import jysk from '../../assets/icons/jysk.png';
 
 export default function Topbar() {
   return (
@@ -10,7 +9,7 @@ export default function Topbar() {
 
         <div className="pt-3 text-2xl text-blue-400 ">eammate</div>
       </div>
-      <img alt="icon" src={JYSK_logo} className="flex pt-2 pb-2" />
+      <img alt="icon" src={jysk} className="flex pt-2 pb-2" />
     </div>
   );
 }

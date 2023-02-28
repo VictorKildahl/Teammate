@@ -19,7 +19,7 @@ const { menubar } = require('menubar');
 
 const mb = menubar({
   index: `http://localhost:1212/`, // Default index.html file in electron-react-boilerplate
-  icon: '/assets/icons/t.png',
+  icon: path.join(process.cwd(), './assets/icons/t.png'),
   preloadWindow: true, // Show the menubar window as soon as the application is launched
   browserWindow: {
     webPreferences: {

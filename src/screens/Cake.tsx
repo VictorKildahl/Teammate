@@ -41,7 +41,7 @@ export default function Cake() {
           />
         </div>
         <div className="flex justify-center w-full pt-10">
-          <Notification type="cake" text={name} kitchen={whenWhere} />
+          <Notification type="cake" name={name} whenWhere={whenWhere} />
         </div>
         <button
           type="submit"

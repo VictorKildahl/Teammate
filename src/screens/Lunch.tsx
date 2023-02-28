@@ -41,7 +41,7 @@ export default function Lunch() {
           />
         </div>
         <div className="flex justify-center w-full pt-10">
-          <Notification type="lunch" text={name} time={whenWhere} />
+          <Notification type="lunch" name={name} whenWhere={whenWhere} />
         </div>
         <button
           type="submit"

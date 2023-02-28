@@ -14,6 +14,7 @@ export default function Home() {
         {notifications &&
           notifications
             .sort((a, b) => b.timestamp.seconds - a.timestamp.seconds)
+            .slice(0, 6)
             .map((notification) => (
               <Notification
                 type={notification.type}
