@@ -9,8 +9,8 @@ import './App.css';
 
 export default function App() {
   return (
-    <Router>
-      <div className="h-[700px] bg-gradient-to-b from-jysk to-jysk-brand-400">
+    <div className="h-screen bg-gradient-to-b from-jysk to-jysk-brand-400">
+      <Router>
         <Topbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -19,7 +19,7 @@ export default function App() {
           <Route path="/lunch" element={<Lunch />} />
         </Routes>
         <BottomNavigation />
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }

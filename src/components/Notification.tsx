@@ -19,7 +19,7 @@ export default function Notification({
         <img
           alt="icon"
           src={type === 'cake' ? donut : cutlery}
-          className="w-8 duration-100 ease-in group-hover:scale-110"
+          className="w-8 ml-4 duration-100 ease-in group-hover:scale-110"
         />
         <div className="pl-5">
           {type === 'lunch' ? (

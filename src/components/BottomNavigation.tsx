@@ -7,10 +7,7 @@ import cutlery from '../../assets/icons/cutlery.svg';
 export default function BottomNavigation() {
   return (
     <div className="w-full">
-      <section
-        id="bottom-navigation"
-        className="fixed inset-x-0 bottom-0 z-10 block shadow"
-      >
+      <section className="fixed inset-x-0 bottom-0 z-10 block shadow bg-gradient-to-b from-jysk-brand-400 to-blue-500">
         <nav className="border-t border-jysk-brand-500">
           <div id="tabs" className="flex justify-between pt-2 pb-2">
             <Link
