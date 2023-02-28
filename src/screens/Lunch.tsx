@@ -1,7 +1,7 @@
-import { firestore } from 'constants/Firebase';
-import React, { useState } from 'react';
-import { collection, addDoc } from 'firebase/firestore';
 import Notification from 'components/Notification';
+import { firestore } from 'constants/Firebase';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { useState } from 'react';
 
 export default function Lunch() {
   const [name, setName] = useState('');
@@ -11,8 +11,10 @@ export default function Lunch() {
     event.preventDefault();
 
     await addDoc(collection(firestore, 'lunch'), {
-      text: `${name} is going to lunch`,
+      name,
       time,
+      type: 'lunch',
+      timestamp: serverTimestamp(),
     });
   }
 
@@ -39,7 +41,7 @@ export default function Lunch() {
           />
         </div>
         <div className="flex justify-center w-full pt-10">
-          <Notification text={name} time={time} type="lunch" />
+          <Notification type="lunch" text={name} time={time} />
         </div>
         <button
           type="submit"

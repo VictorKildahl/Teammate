@@ -5,16 +5,33 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [data, setData] = useState([]);
+  const lunchRef = collection(firestore, 'lunch');
+  const cakeRef = collection(firestore, 'cake');
 
   async function getData() {
     const array = [];
-    const colRef = collection(firestore, 'lunch');
-    const docsSnap = await getDocs(colRef);
+    const lunchSnap = await getDocs(lunchRef);
+    const cakeSnap = await getDocs(cakeRef);
 
-    docsSnap.forEach((doc) => {
-      array.push([doc.data().text, doc.data().time]);
+    lunchSnap.forEach((doc) => {
+      array.push([
+        doc.data().name,
+        doc.data().time,
+        doc.data().timestamp,
+        doc.data().type,
+      ]);
     });
 
+    cakeSnap.forEach((doc) => {
+      array.push([
+        doc.data().typeOfCake,
+        doc.data().kitchen,
+        doc.data().timestamp,
+        doc.data().type,
+      ]);
+    });
+
+    array.sort((a, b) => b[2].seconds - a[2].seconds);
     setData(array);
   }
 
@@ -26,10 +43,13 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center pt-8">
       <div className="text-4xl font-bold">Home</div>
 
-      {data.map((item) => (
-        <Notification type="lunch" text={item[0]} time={item[1]} />
-      ))}
-      <Notification type="cake" text="There is Drømmekage" kitchen="4.1.1" />
+      {data.map((item) =>
+        item[3] === 'lunch' ? (
+          <Notification type={item[3]} text={item[0]} time={item[1]} />
+        ) : (
+          <Notification type={item[3]} text={item[0]} kitchen={item[1]} />
+        )
+      )}
     </div>
   );
 }
