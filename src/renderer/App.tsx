@@ -18,6 +18,15 @@ export default function App() {
         <Route path="/lunch" element={<Lunch />} />
       </Routes>
       <BottomNavigation />
+      <div className="w-full h-full bg-gradient-to-b from-jysk to-jysk-brand-400">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/canteen" element={<Canteen />} />
+          <Route path="/cake" element={<Cake />} />
+          <Route path="/lunch" element={<Lunch />} />
+        </Routes>
+        <BottomNavigation />
+      </div>
     </Router>
   );
 }

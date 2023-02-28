@@ -19,6 +19,7 @@ const { menubar } = require('menubar');
 
 const mb = menubar({
   index: `http://localhost:1212/`, // Default index.html file in electron-react-boilerplate
+  icon: '/assets/icons/t.png',
   preloadWindow: true, // Show the menubar window as soon as the application is launched
   browserWindow: {
     webPreferences: {
@@ -28,7 +29,6 @@ const mb = menubar({
     width: 1200, // Set the width of the popup
     height: 800, // Set the height of the popup
   },
-  icon: '/assets/icons/t.png',
 });
 
 mb.on('ready', () => {

@@ -9,36 +9,52 @@ export default function BottomNavigation() {
     <div className="w-full h-screen">
       <section
         id="bottom-navigation"
-        className="block fixed inset-x-0 bottom-0 z-10 bg-white shadow"
+        className="block fixed inset-x-0 bottom-0 z-10 shadow"
       >
-        <nav>
-          <div id="tabs" className="flex justify-between bg-blue-500">
+        <nav className="border-t border-jysk-brand-500">
+          <div id="tabs" className="flex justify-between pt-2 pb-2">
             <Link
               to="/"
-              className="flex items-center flex-col w-full focus:bg-blue-200 hover:bg-blue-200 justify-center text-center pt-2 pb-1"
+              className="flex items-center flex-col w-full justify-center text-center pt-2 pb-1 group"
             >
-              <img alt="icon" src={home} className="w-8" />
+              <img
+                alt="icon"
+                src={home}
+                className="w-8 pb-2 group-hover:scale-110 ease-in duration-100"
+              />
               <span className="tab tab-home block text-xs">Home</span>
             </Link>
             <Link
               to="/canteen"
-              className="flex items-center flex-col w-full focus:bg-blue-200 hover:bg-blue-200 justify-center text-center pt-2 pb-1"
+              className="flex items-center flex-col w-full justify-center text-center pt-2 pb-1 group"
             >
-              <img alt="icon" src={book} className="w-8" />
+              <img
+                alt="icon"
+                src={book}
+                className="w-8 pb-2 group-hover:scale-110 ease-in duration-100"
+              />
               <span className="tab tab-home block text-xs">Canteen</span>
             </Link>
             <Link
               to="/cake"
-              className="flex items-center flex-col w-full focus:bg-blue-200 hover:bg-blue-200 justify-center text-center pt-2 pb-1"
+              className="flex items-center flex-col w-full justify-center text-center pt-2 pb-1 group"
             >
-              <img alt="icon" src={cake} className="w-8" />
+              <img
+                alt="icon"
+                src={cake}
+                className="w-8 pb-2 group-hover:scale-110 ease-in duration-100"
+              />
               <span className="tab tab-kategori block text-xs">Cake</span>
             </Link>
             <Link
               to="/lunch"
-              className="flex items-center flex-col w-full focus:bg-blue-200 hover:bg-blue-200 justify-center text-center pt-2 pb-1"
+              className="flex items-center flex-col w-full justify-center text-center pt-2 pb-1 group"
             >
-              <img alt="icon" src={cutlery} className="w-8" />
+              <img
+                alt="icon"
+                src={cutlery}
+                className="w-8 pb-2 group-hover:scale-110 ease-in duration-100"
+              />
               <span className="tab tab-explore block text-xs">Lunch</span>
             </Link>
           </div>
