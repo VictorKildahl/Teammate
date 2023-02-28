@@ -10,7 +10,7 @@ import './App.css';
 export default function App() {
   return (
     <Router>
-      <div className="w-full h-full bg-gradient-to-b from-jysk to-jysk-brand-400">
+      <div className="h-[700px] bg-gradient-to-b from-jysk to-jysk-brand-400">
         <Topbar />
         <Routes>
           <Route path="/" element={<Home />} />

@@ -26,8 +26,8 @@ const mb = menubar({
       nodeIntegration: true,
       contextIsolation: false,
     },
-    width: 1200, // Set the width of the popup
-    height: 800, // Set the height of the popup
+    width: 600, // Set the width of the popup
+    height: 700, // Set the height of the popup
   },
 });
 

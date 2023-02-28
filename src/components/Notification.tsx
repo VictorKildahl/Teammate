@@ -14,24 +14,24 @@ export default function Notification({
   whenWhere,
 }: NotificationProps) {
   return (
-    <div className="h-20 mt-4 bg-blue-100 rounded-lg w-96">
-      <div className="flex flex-row p-4">
+    <div className="mt-4 bg-blue-100 rounded-lg h-14 w-96">
+      <div className="flex flex-row p-1">
         <img
           alt="icon"
           src={type === 'cake' ? donut : cutlery}
-          className="w-12 duration-100 ease-in group-hover:scale-110"
+          className="w-8 duration-100 ease-in group-hover:scale-110"
         />
         <div className="pl-5">
           {type === 'lunch' ? (
-            <div className="">{name} is going to lunch</div>
+            <>
+              <div className="">{name} is going to lunch</div>
+              <div className="">When: {whenWhere}</div>
+            </>
           ) : (
-            <div className="">There is {name}</div>
-          )}
-
-          {type === 'lunch' ? (
-            <div className="">When: {whenWhere}</div>
-          ) : (
-            <div className="">Where: {whenWhere}</div>
+            <>
+              <div className="">There is {name}</div>
+              <div className="">Where: {whenWhere}</div>
+            </>
           )}
         </div>
       </div>
