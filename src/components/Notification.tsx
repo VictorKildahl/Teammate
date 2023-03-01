@@ -1,5 +1,5 @@
 /* eslint-disable react/require-default-props */
-import cutlery from '../../assets/icons/cutlery.svg';
+import cutleryDark from '../../assets/icons/cutlery_dark.svg';
 import donut from '../../assets/icons/donut.svg';
 
 type NotificationProps = {
@@ -14,12 +14,18 @@ export default function Notification({
   whenWhere,
 }: NotificationProps) {
   return (
-    <div className="mt-4 bg-blue-100 rounded-lg h-14 w-96">
+    <div
+      className={
+        type === 'cake'
+          ? 'mt-4 duration-200 ease-in bg-blue-100 rounded-full h-14 w-96 '
+          : 'mt-4 duration-200 ease-in bg-blue-400 rounded-full h-14 w-96 '
+      }
+    >
       <div className="flex flex-row p-1">
         <img
           alt="icon"
-          src={type === 'cake' ? donut : cutlery}
-          className="w-8 ml-4 duration-100 ease-in group-hover:scale-110"
+          src={type === 'cake' ? donut : cutleryDark}
+          className="w-8 ml-4"
         />
         <div className="pl-5">
           {type === 'lunch' ? (

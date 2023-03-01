@@ -12,14 +12,16 @@ export default function BottomNavigation() {
           <div id="tabs" className="flex justify-between pt-2 pb-2">
             <Link
               to="/"
-              className="flex flex-col items-center justify-center w-full pt-2 pb-1 text-center group"
+              className="flex flex-col items-center justify-center w-full pt-2 pb-1 text-center group "
             >
               <img
                 alt="icon"
                 src={home}
-                className="w-8 pb-2 duration-100 ease-in group-hover:scale-110"
+                className="w-8 pb-2 duration-100 ease-in group-hover:scale-150 "
               />
-              <span className="block text-xs tab tab-home">Home</span>
+              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-home group-hover:scale-150">
+                Home
+              </span>
             </Link>
             <Link
               to="/canteen"
@@ -28,9 +30,11 @@ export default function BottomNavigation() {
               <img
                 alt="icon"
                 src={book}
-                className="w-8 pb-2 duration-100 ease-in group-hover:scale-110"
+                className="w-8 pb-2 duration-100 ease-in group-hover:scale-150 "
               />
-              <span className="block text-xs tab tab-home">Canteen</span>
+              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-home group-hover:scale-150">
+                Canteen
+              </span>
             </Link>
             <Link
               to="/cake"
@@ -39,9 +43,11 @@ export default function BottomNavigation() {
               <img
                 alt="icon"
                 src={cake}
-                className="w-8 pb-2 duration-100 ease-in group-hover:scale-110"
+                className="w-8 pb-2 duration-100 ease-in group-hover:scale-150"
               />
-              <span className="block text-xs tab tab-kategori">Cake</span>
+              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-kategori group-hover:scale-150">
+                Cake
+              </span>
             </Link>
             <Link
               to="/lunch"
@@ -50,9 +56,11 @@ export default function BottomNavigation() {
               <img
                 alt="icon"
                 src={cutlery}
-                className="w-8 pb-2 duration-100 ease-in group-hover:scale-110"
+                className="w-8 pb-2 duration-100 ease-in group-hover:scale-150"
               />
-              <span className="block text-xs tab tab-explore">Lunch</span>
+              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-explore group-hover:scale-150">
+                Lunch
+              </span>
             </Link>
           </div>
         </nav>

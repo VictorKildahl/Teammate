@@ -9,13 +9,23 @@
  * `./src/main.js` using webpack. This gives us some performance wins.
  */
 import path from 'path';
-import { app, BrowserWindow, shell, ipcMain } from 'electron';
+import { app, BrowserWindow, shell, ipcMain, Notification } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
 
 const { menubar } = require('menubar');
+
+const NOTIFICATION_TITLE = 'Basic Notification';
+const NOTIFICATION_BODY = 'Notification from the Main process';
+
+function showNotification() {
+  new Notification({
+    title: NOTIFICATION_TITLE,
+    body: NOTIFICATION_BODY,
+  }).show();
+}
 
 const mb = menubar({
   index: `http://localhost:1212/`, // Default index.html file in electron-react-boilerplate
@@ -33,6 +43,7 @@ const mb = menubar({
 
 mb.on('ready', () => {
   console.log('Menubar app is ready');
+  showNotification();
 });
 
 mb.on('after-create-window', () => {
@@ -152,6 +163,7 @@ app.on('window-all-closed', () => {
 
 app
   .whenReady()
+
   .then(() => {
     createWindow();
     app.on('activate', () => {
@@ -160,4 +172,6 @@ app
       if (mainWindow === null) createWindow();
     });
   })
+  .then(showNotification)
+
   .catch(console.log);

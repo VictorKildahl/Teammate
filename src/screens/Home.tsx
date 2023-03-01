@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center pt-8 ">
-      <div className="text-4xl font-bold">Home</div>
+      <div className="text-4xl font-bold text-blue-100 ">Home</div>
       <div className="h-[440px] overflow-hidden">
         {notifications &&
           notifications
