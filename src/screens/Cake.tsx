@@ -10,12 +10,14 @@ export default function Cake() {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    await addDoc(collection(firestore, 'notifications'), {
-      type: 'cake',
-      name,
-      whenWhere,
-      timestamp: serverTimestamp(),
-    });
+    if (name && whenWhere) {
+      await addDoc(collection(firestore, 'notifications'), {
+        type: 'cake',
+        name,
+        whenWhere,
+        timestamp: serverTimestamp(),
+      });
+    }
   }
 
   return (

@@ -17,9 +17,9 @@ export default function BottomNavigation() {
               <img
                 alt="icon"
                 src={home}
-                className="w-8 pb-2 duration-100 ease-in group-hover:scale-150 "
+                className="w-8 pb-2 duration-100 ease-in group-hover:scale-125 "
               />
-              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-home group-hover:scale-150">
+              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-home group-hover:scale-125">
                 Home
               </span>
             </Link>
@@ -30,9 +30,9 @@ export default function BottomNavigation() {
               <img
                 alt="icon"
                 src={book}
-                className="w-8 pb-2 duration-100 ease-in group-hover:scale-150 "
+                className="w-8 pb-2 duration-100 ease-in group-hover:scale-125 "
               />
-              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-home group-hover:scale-150">
+              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-home group-hover:scale-125">
                 Canteen
               </span>
             </Link>
@@ -43,9 +43,9 @@ export default function BottomNavigation() {
               <img
                 alt="icon"
                 src={cake}
-                className="w-8 pb-2 duration-100 ease-in group-hover:scale-150"
+                className="w-8 pb-2 duration-100 ease-in group-hover:scale-125"
               />
-              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-kategori group-hover:scale-150">
+              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-kategori group-hover:scale-125">
                 Cake
               </span>
             </Link>
@@ -56,9 +56,9 @@ export default function BottomNavigation() {
               <img
                 alt="icon"
                 src={cutlery}
-                className="w-8 pb-2 duration-100 ease-in group-hover:scale-150"
+                className="w-8 pb-2 duration-100 ease-in group-hover:scale-125"
               />
-              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-explore group-hover:scale-150">
+              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-explore group-hover:scale-125">
                 Lunch
               </span>
             </Link>

@@ -10,12 +10,14 @@ export default function Lunch() {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    await addDoc(collection(firestore, 'notifications'), {
-      type: 'lunch',
-      name,
-      whenWhere,
-      timestamp: serverTimestamp(),
-    });
+    if (name && whenWhere) {
+      await addDoc(collection(firestore, 'notifications'), {
+        type: 'lunch',
+        name,
+        whenWhere,
+        timestamp: serverTimestamp(),
+      });
+    }
   }
 
   return (

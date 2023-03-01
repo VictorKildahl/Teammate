@@ -10,19 +10,17 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center pt-8 ">
       <div className="text-4xl font-bold text-blue-100 ">Home</div>
-      <div className="h-[440px] overflow-hidden">
-        {notifications &&
-          notifications
-            .sort((a, b) => b.timestamp.seconds - a.timestamp.seconds)
-            .slice(0, 6)
-            .map((notification) => (
-              <Notification
-                type={notification.type}
-                name={notification.name}
-                whenWhere={notification.whenWhere}
-              />
-            ))}
-      </div>
+      {notifications &&
+        notifications
+          .sort((a, b) => b.timestamp.seconds - a.timestamp.seconds)
+          .slice(0, 6)
+          .map((notification) => (
+            <Notification
+              type={notification.type}
+              name={notification.name}
+              whenWhere={notification.whenWhere}
+            />
+          ))}
     </div>
   );
 }

@@ -18,7 +18,7 @@ export default function Notification({
       className={
         type === 'cake'
           ? 'mt-4 duration-200 ease-in bg-blue-100 rounded-full h-14 w-96 '
-          : 'mt-4 duration-200 ease-in bg-blue-400 rounded-full h-14 w-96 '
+          : 'mt-4 duration-200 ease-in bg-blue-300 rounded-full h-14 w-96 '
       }
     >
       <div className="flex flex-row p-1">
