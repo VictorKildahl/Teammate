@@ -1,6 +1,6 @@
 /* eslint-disable react/require-default-props */
 import cutleryDark from '../../assets/icons/cutlery_dark.svg';
-import donut from '../../assets/icons/donut.svg';
+import cakeDark from '../../assets/icons/cake_dark.svg';
 
 type NotificationProps = {
   type: 'cake' | 'lunch';
@@ -17,15 +17,15 @@ export default function Notification({
     <div
       className={
         type === 'cake'
-          ? 'mt-4 duration-200 ease-in bg-blue-100 rounded-full h-14 w-96 '
-          : 'mt-4 duration-200 ease-in bg-blue-300 rounded-full h-14 w-96 '
+          ? 'mt-4 duration-200 ease-in bg-blue-100 rounded-xl h-14 w-96 hover:shadow-xl '
+          : 'mt-4 duration-200 ease-in bg-blue-300 rounded-xl h-14 w-96 hover:shadow-xl'
       }
     >
       <div className="flex flex-row p-1">
         <img
           alt="icon"
-          src={type === 'cake' ? donut : cutleryDark}
-          className="w-8 ml-4"
+          src={type === 'cake' ? cakeDark : cutleryDark}
+          className="w-8 ml-4 "
         />
         <div className="pl-5">
           {type === 'lunch' ? (

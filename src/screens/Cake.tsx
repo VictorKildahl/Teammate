@@ -53,7 +53,7 @@ export default function Cake() {
         </div>
         <button
           type="submit"
-          className="w-full mt-10 font-bold text-blue-100 rounded-full bg-jysk-gradients-blue-dark h-14 hover:bg-jysk-gradients-blue-light"
+          className="w-full mt-10 font-bold text-blue-100 rounded-full hover:shadow-lg bg-jysk-gradients-blue-dark h-14 hover:bg-jysk-gradients-blue-light"
         >
           Post notification
         </button>

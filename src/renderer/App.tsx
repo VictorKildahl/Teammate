@@ -33,7 +33,7 @@ export default function App() {
               body:
                 latestNotification.type === 'cake'
                   ? `There is ${latestNotification.name} in ${latestNotification.whenWhere}`
-                  : `${latestNotification.name} is going to lunch in ${latestNotification.whenWhere}`,
+                  : `${latestNotification.name} is going to lunch ${latestNotification.whenWhere}`,
             });
           } else if (Notification.permission !== 'denied') {
             Notification.requestPermission()
@@ -44,7 +44,7 @@ export default function App() {
                     body:
                       latestNotification.type === 'cake'
                         ? `There is ${latestNotification.name} in ${latestNotification.whenWhere}`
-                        : `${latestNotification.name} is going to lunch in ${latestNotification.whenWhere}`,
+                        : `${latestNotification.name} is going to lunch ${latestNotification.whenWhere}`,
                   });
                 }
                 return permission;
