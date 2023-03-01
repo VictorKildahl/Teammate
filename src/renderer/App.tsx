@@ -1,30 +1,34 @@
 import BottomNavigation from 'components/BottomNavigation';
 import Topbar from 'components/Topbar';
+import { firestore } from 'constants/Firebase';
+import { collection } from 'firebase/firestore';
+import { useEffect, useMemo, useState } from 'react';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { MemoryRouter as Router, Route, Routes } from 'react-router-dom';
 import Cake from 'screens/Cake';
 import Canteen from 'screens/Canteen';
 import Home from 'screens/Home';
 import Lunch from 'screens/Lunch';
 import './App.css';
-import { firestore } from 'constants/Firebase';
-import { collection } from 'firebase/firestore';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { useEffect, useState } from 'react';
-import deepEqual from 'deep-equal';
 
 export default function App() {
-  const colRef = collection(firestore, 'notifications');
+  const colRef = useMemo(() => collection(firestore, 'notifications'), []);
   const [notifications] = useCollectionData(colRef);
   const [prevObject, setPrevObject] = useState(null);
-  const latestNotification = notifications?.sort(
-    (a, b) => b.timestamp?.seconds - a.timestamp?.seconds
-  )[0];
 
   useEffect(() => {
-    if (notifications !== null && !deepEqual(prevObject, notifications)) {
+    const latestNotification = [...(notifications ?? [])].sort(
+      (a, b) => b.timestamp?.seconds - a.timestamp?.seconds
+    )[0];
+
+    if (
+      latestNotification &&
+      prevObject?.timestamp.seconds !== latestNotification.timestamp.seconds
+    ) {
       if ('Notification' in window) {
         try {
           if (Notification.permission === 'granted') {
+            // eslint-disable-next-line no-new
             new Notification('Teammate', {
               body:
                 latestNotification.type === 'cake'
@@ -35,6 +39,7 @@ export default function App() {
             Notification.requestPermission()
               .then((permission) => {
                 if (permission === 'granted') {
+                  // eslint-disable-next-line no-new
                   new Notification('Teammate', {
                     body:
                       latestNotification.type === 'cake'
@@ -50,9 +55,9 @@ export default function App() {
           console.log('Error displaying notification:', e);
         }
       }
+      setPrevObject(latestNotification);
     }
-    setPrevObject(notifications);
-  }, [notifications]);
+  }, [notifications, prevObject]);
 
   return (
     <div className="h-screen bg-gradient-to-b from-jysk to-jysk-brand-400">
