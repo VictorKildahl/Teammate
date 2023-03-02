@@ -6,6 +6,7 @@ import { useState } from 'react';
 export default function Lunch() {
   const [name, setName] = useState('');
   const [whenWhere, setWhenWhere] = useState('');
+  const [succesMessage, setSuccesMessage] = useState(false);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -16,7 +17,9 @@ export default function Lunch() {
         name,
         whenWhere,
         timestamp: serverTimestamp(),
-      });
+      })
+        .then(() => setSuccesMessage(true))
+        .catch(() => setSuccesMessage(false));
     }
   }
 
@@ -54,6 +57,7 @@ export default function Lunch() {
           Post notification
         </button>
       </form>
+      {succesMessage && <div>Notification sent</div>}
     </div>
   );
 }
