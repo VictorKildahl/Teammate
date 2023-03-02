@@ -25,7 +25,6 @@ const configuration: webpack.Configuration = {
   entry: {
     main: path.join(webpackPaths.srcMainPath, 'main.ts'),
     preload: path.join(webpackPaths.srcMainPath, 'preload.ts'),
-    renderer: path.join(__dirname, '..', 'app', 'renderer', 'index.tsx'),
   },
 
   output: {
