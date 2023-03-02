@@ -23,6 +23,7 @@ export default function App() {
 
     if (
       latestNotification &&
+      latestNotification.timestamp &&
       prevObject?.timestamp.seconds !== latestNotification.timestamp.seconds
     ) {
       if ('Notification' in window) {
