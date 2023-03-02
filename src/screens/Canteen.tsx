@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Canteen() {
   return (
-    <div className="flex flex-col pt-6 text-blue-100">
+    <div className="flex flex-col pt-6 pl-20 text-blue-100">
       <div className="flex items-center justify-center text-4xl font-bold">
         Canteen plan
       </div>
