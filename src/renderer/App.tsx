@@ -32,8 +32,8 @@ export default function App() {
             new Notification('Teammate', {
               body:
                 latestNotification.type === 'cake'
-                  ? `There is ${latestNotification.name} in ${latestNotification.whenWhere}`
-                  : `${latestNotification.name} is going to lunch ${latestNotification.whenWhere}`,
+                  ? `There is ${latestNotification.name} \n Where: ${latestNotification.whenWhere}`
+                  : `${latestNotification.name} is going to lunch \n When: ${latestNotification.whenWhere}`,
             });
           } else if (Notification.permission !== 'denied') {
             Notification.requestPermission()
