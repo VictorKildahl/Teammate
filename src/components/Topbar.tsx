@@ -1,14 +1,25 @@
-import bigT from '../../assets/icons/bigT.png';
-import jysk from '../../assets/icons/jysk.png';
+import bigMascot from '../../assets/icons/bigMascot.png';
+import power from '../../assets/icons/power.svg';
+const { ipcRenderer } = window.require('electron');
 
 export default function Topbar() {
   return (
-    <div className="flex justify-between w-full px-8 pt-4 h-14">
-      <div className="flex items-center justify-center ">
-        <img alt="icon" src={bigT} className="flex w-8 h-8" />
-        <div className="text-3xl text-blue-400">eammate</div>
-      </div>
-      <img alt="icon" src={jysk} className="flex w-20 h-10" />
+    <div className="flex justify-between w-full px-4 pt-4 h-14">
+      <img alt="icon" src={bigMascot} className="flex w-32 h-32" />
+
+      <button
+        type="button"
+        className="pr-4"
+        onClick={() => {
+          ipcRenderer.send('closeApp');
+        }}
+      >
+        <img
+          alt="icon"
+          src={power}
+          className="w-6 duration-100 ease-in hover:scale-125"
+        />
+      </button>
     </div>
   );
 }

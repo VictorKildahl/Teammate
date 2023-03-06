@@ -17,8 +17,8 @@ export default function Notification({
     <div
       className={
         type === 'cake'
-          ? 'mt-4 duration-200 ease-in bg-blue-100 rounded-xl h-14 w-96 hover:shadow-xl '
-          : 'mt-4 duration-200 ease-in bg-blue-300 rounded-xl h-14 w-96 hover:shadow-xl'
+          ? 'mt-4 duration-200 ease-in bg-[#38d0c9] rounded-xl h-14 w-96 hover:shadow-xl '
+          : 'mt-4 duration-200 ease-in bg-[#23a9a3] rounded-xl h-14 w-96 hover:shadow-xl'
       }
     >
       <div className="flex flex-row p-1">

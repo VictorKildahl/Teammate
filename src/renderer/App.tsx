@@ -61,7 +61,7 @@ export default function App() {
   }, [notifications, prevObject]);
 
   return (
-    <div className="h-screen bg-gradient-to-b from-jysk to-jysk-brand-400">
+    <div className="h-screen bg-gradient-to-b from-[#95c4c5] to-[#7ba9ad]">
       <Router>
         <Topbar />
         <Routes>

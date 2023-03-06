@@ -7,7 +7,7 @@ import cutlery from '../../assets/icons/cutlery.svg';
 export default function BottomNavigation() {
   return (
     <div className="w-full">
-      <section className="fixed inset-x-0 bottom-0 z-10 block shadow bg-gradient-to-b from-jysk-brand-400 to-blue-500">
+      <section className="fixed inset-x-0 bottom-0 block shadow text-[#11585d]">
         <nav className="border-t border-jysk-brand-500">
           <div id="tabs" className="flex justify-between pt-2 pb-2">
             <Link
@@ -19,7 +19,7 @@ export default function BottomNavigation() {
                 src={home}
                 className="w-8 pb-2 duration-100 ease-in group-hover:scale-125 "
               />
-              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-home group-hover:scale-125">
+              <span className="block text-xs duration-100 ease-in tab tab-home group-hover:scale-125">
                 Home
               </span>
             </Link>
@@ -32,7 +32,7 @@ export default function BottomNavigation() {
                 src={book}
                 className="w-8 pb-2 duration-100 ease-in group-hover:scale-125 "
               />
-              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-home group-hover:scale-125">
+              <span className="block text-xs duration-100 ease-in tab tab-home group-hover:scale-125">
                 Canteen
               </span>
             </Link>
@@ -45,7 +45,7 @@ export default function BottomNavigation() {
                 src={cake}
                 className="w-8 pb-2 duration-100 ease-in group-hover:scale-125"
               />
-              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-kategori group-hover:scale-125">
+              <span className="block text-xs duration-100 ease-in tab tab-kategori group-hover:scale-125">
                 Cake
               </span>
             </Link>
@@ -58,7 +58,7 @@ export default function BottomNavigation() {
                 src={cutlery}
                 className="w-8 pb-2 duration-100 ease-in group-hover:scale-125"
               />
-              <span className="block text-xs text-blue-100 duration-100 ease-in tab tab-explore group-hover:scale-125">
+              <span className="block text-xs duration-100 ease-in tab tab-explore group-hover:scale-125">
                 Lunch
               </span>
             </Link>

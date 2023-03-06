@@ -25,29 +25,25 @@ export default function Cake() {
 
   return (
     <div className="flex flex-col items-center justify-center pt-8">
-      <div className="pb-10 text-4xl font-bold text-blue-100">Cake</div>
+      <div className="pb-10 text-4xl font-bold text-[#11585d]">Cake</div>
       <form onSubmit={handleSubmit}>
-        <div className="flex flex-row pb-5 ">
-          <div className="pt-2 text-xl font-bold text-blue-100 w-44">
-            Type of cake:
-          </div>
+        <div className="flex flex-row pb-5 text-[#11585d]">
+          <div className="pt-2 text-xl font-bold w-44">Type of cake:</div>
           <input
             type="text"
             value={name}
             maxLength={25}
-            className="mt-2 text-xl text-blue-100 bg-transparent border-b w-60 focus:outline-none "
+            className="mt-2 text-xl bg-transparent border-b w-60 focus:outline-none "
             onChange={(event) => setName(event.target.value)}
           />
         </div>
-        <div className="flex flex-row ">
-          <div className="pt-2 text-xl font-bold text-blue-100 w-44">
-            Kitchen:
-          </div>
+        <div className="flex flex-row text-[#11585d]">
+          <div className="pt-2 text-xl font-bold w-44">Kitchen:</div>
           <input
             type="text"
             value={whenWhere}
             maxLength={25}
-            className="mt-2 text-xl text-blue-100 bg-transparent border-b w-60 focus:outline-none "
+            className="mt-2 text-xl bg-transparent border-b w-60 focus:outline-none "
             onChange={(event) => setWhenWhere(event.target.value)}
           />
         </div>
@@ -56,7 +52,7 @@ export default function Cake() {
         </div>
         <button
           type="submit"
-          className="w-full mt-10 font-bold text-blue-100 rounded-full hover:shadow-lg bg-jysk-gradients-blue-dark h-14 hover:bg-jysk-gradients-blue-light"
+          className="w-full mt-10 font-bold text-white rounded-full hover:shadow-lg bg-[#48434a] h-14 hover:bg-[#2f2932]"
         >
           Post notification
         </button>
